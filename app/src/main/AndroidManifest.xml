@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="reader.feed.rss.rss_feed_reader"
+<manifest package="rss.feed.reader"
     xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- permissions -->
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        android:theme="@style/AppTheme"
+        android:name=".RssFeedReaderApp">
+
+        <!-- activities -->
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- receivers -->
+
+        <!-- services -->
+
+        <!-- content providers -->
+
     </application>
 
 </manifest>

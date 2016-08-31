@@ -1,4 +1,4 @@
-package reader.feed.rss.rss_feed_reader;
+package rss.feed.reader;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

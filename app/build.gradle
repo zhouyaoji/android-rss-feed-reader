@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
 
 android {
     compileSdkVersion 24
@@ -22,6 +23,7 @@ android {
 ext {
     supportLibraryVersion = '24.2.0'
     picassoVersion = '2.5.2'
+    butterKnifeVersion = '8.4.0'
 }
 
 dependencies {
@@ -30,4 +32,7 @@ dependencies {
     compile "com.android.support:appcompat-v7:$supportLibraryVersion"
 
     compile "com.squareup.picasso:picasso:$picassoVersion"
+
+    compile "com.jakewharton:butterknife:$butterKnifeVersion"
+    apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
 }

@@ -1,0 +1,38 @@
+{
+  "project_info": {
+    "project_number": "483662641418",
+    "project_id": "firebase-rss-feed-reader"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:483662641418:android:5eaa706000ce09ca",
+        "android_client_info": {
+          "package_name": "rss.feed.reader"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlMa19j4iD1lG-FX9qe_5DOqQy5mq9dAw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 2,
+          "analytics_property": {
+            "tracking_id": "UA-71868809-2"
+          }
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

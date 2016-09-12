@@ -24,6 +24,8 @@ ext {
     supportLibraryVersion = '24.2.0'
     picassoVersion = '2.5.2'
     butterKnifeVersion = '8.4.0'
+    retrofitVersion = '2.1.0'
+    firebaseVersion = '9.2.1'
 }
 
 dependencies {
@@ -35,14 +37,6 @@ dependencies {
 
     compile "com.jakewharton:butterknife:$butterKnifeVersion"
     apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
-}
-
-ext {
-    retrofitVersion = '2.1.0'
-    firebaseVersion = '9.2.1'
-}
-
-dependencies {
 
     //retrofit
     compile "com.squareup.retrofit2:retrofit:$retrofitVersion"
@@ -51,6 +45,4 @@ dependencies {
     //firebase
     compile "com.google.firebase:firebase-core:$firebaseVersion"
     compile "com.google.firebase:firebase-auth:$firebaseVersion"
-
 }
-

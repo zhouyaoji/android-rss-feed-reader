@@ -25,7 +25,8 @@ ext {
     picassoVersion = '2.5.2'
     butterKnifeVersion = '8.4.0'
     retrofitVersion = '2.1.0'
-    firebaseVersion = '9.2.1'
+    firebaseVersion = '9.4.0'
+    playServicesVersion = '9.4.0'
 }
 
 dependencies {
@@ -45,4 +46,9 @@ dependencies {
     //firebase
     compile "com.google.firebase:firebase-core:$firebaseVersion"
     compile "com.google.firebase:firebase-auth:$firebaseVersion"
+
+    compile "com.google.android.gms:play-services-analytics:$playServicesVersion"
 }
+
+// Should be defined below dependencies section in order to success compile
+apply plugin: 'com.google.gms.google-services'

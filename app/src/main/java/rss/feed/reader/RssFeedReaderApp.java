@@ -5,6 +5,10 @@ import android.app.Application;
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
+import rss.feed.reader.dagger.components.AppComponent;
+import rss.feed.reader.dagger.components.DaggerAppComponent;
+import rss.feed.reader.dagger.modules.AppModule;
+
 /**
  * App class.
  * Created by vkravets on 8/31/2016.
@@ -15,6 +19,7 @@ public class RssFeedReaderApp extends Application {
      * Application instance.
      */
     private static RssFeedReaderApp sInstance;
+    private AppComponent mAppComponent;
 
     private Tracker mTracker;
 
@@ -25,6 +30,10 @@ public class RssFeedReaderApp extends Application {
 
         GoogleAnalytics analytics = GoogleAnalytics.getInstance(getApplicationContext());
         mTracker = analytics.newTracker(R.xml.global_tracker);
+
+        mAppComponent = DaggerAppComponent.builder()
+                .appModule(new AppModule(this))
+                .build();
     }
 
     /**
@@ -36,5 +45,9 @@ public class RssFeedReaderApp extends Application {
 
     public Tracker getTracker() {
         return mTracker;
+    }
+
+    public AppComponent getAppComponent() {
+        return mAppComponent;
     }
 }

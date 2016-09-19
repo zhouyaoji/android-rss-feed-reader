@@ -27,6 +27,7 @@ ext {
     retrofitVersion = '2.1.0'
     firebaseVersion = '9.4.0'
     playServicesVersion = '9.4.0'
+    daggerVersion = '2.5'
 }
 
 dependencies {
@@ -38,6 +39,10 @@ dependencies {
 
     compile "com.jakewharton:butterknife:$butterKnifeVersion"
     apt "com.jakewharton:butterknife-compiler:$butterKnifeVersion"
+
+    apt "com.google.dagger:dagger-compiler:$daggerVersion"
+    compile "com.google.dagger:dagger:$daggerVersion"
+    provided 'javax.annotation:jsr250-api:1.0'
 
     //retrofit
     compile "com.squareup.retrofit2:retrofit:$retrofitVersion"

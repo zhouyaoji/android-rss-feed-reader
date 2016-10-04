@@ -1,12 +1,11 @@
 package rss.feed.reader.dagger.components;
 
-import android.content.Context;
-
 import javax.inject.Singleton;
 
 import dagger.Component;
 import rss.feed.reader.RssFeedReaderApp;
 import rss.feed.reader.dagger.modules.AppModule;
+import rss.feed.reader.managers.ChannelManager;
 
 /**
  * Singleton-based app component
@@ -17,8 +16,7 @@ import rss.feed.reader.dagger.modules.AppModule;
 @Component(modules = {AppModule.class})
 public interface AppComponent {
 
-    Context appContext();
-
     RssFeedReaderApp app();
 
+    ChannelManager getChannelManager();
 }

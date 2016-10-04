@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_channel_list_parent_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_list_item"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/item_channel_list_logo"
+        android:layout_toRightOf="@+id/item_channel_list_logo"
+        android:orientation="horizontal"
+        android:padding="@dimen/item_channel_list_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_channel_list_title"
+            android:textSize="@dimen/item_channel_list_text_size"/>
+
+        <TextView
+            android:id="@+id/item_channel_list_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="My channel"
+            android:textSize="@dimen/item_channel_list_text_size"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/item_channel_list_logo"
+        android:layout_toRightOf="@+id/item_channel_list_logo"
+        android:orientation="horizontal"
+        android:padding="@dimen/item_channel_list_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/item_channel_list_url"
+            android:textSize="@dimen/item_channel_list_text_size"/>
+
+        <TextView
+            android:id="@+id/item_channel_list_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="http://google.com.ua/rss/blablabla"
+            android:textSize="@dimen/item_channel_list_text_size"/>
+
+    </LinearLayout>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/item_channel_list_logo"
+        android:layout_width="@dimen/item_channel_list_logo_size"
+        android:layout_height="@dimen/item_channel_list_logo_size"
+        android:layout_margin="@dimen/item_channel_list_logo_margin"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/rss_logo" />
+
+    <View
+        android:layout_below="@+id/item_channel_list_logo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_channel_list_separator_height"
+        android:background="@color/colorPrimaryDark" />
+
+</RelativeLayout>

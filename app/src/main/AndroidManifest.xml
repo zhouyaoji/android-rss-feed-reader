@@ -1,38 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="rss.feed.reader"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="rss.feed.reader">
 
     <!-- permissions -->
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".RssFeedReaderApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        android:name=".RssFeedReaderApp">
+        android:theme="@style/AppTheme">
+
+        <!-- receivers -->
+
+
+        <!-- services -->
+
+
+        <!-- content providers -->
 
         <!-- activities -->
         <activity android:name=".ui.activities.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
 
         <activity android:name=".ui.activities.SettingsActivity"
             android:label="@string/settings_activity_label">
         </activity>
-
-        <!-- receivers -->
-
-        <!-- services -->
-
-        <!-- content providers -->
-
+        <activity
+            android:name=".ui.activities.ChannelListActivity"
+            android:label="@string/title_activity_channel_list">
+        </activity>
+        <activity
+            android:name=".ui.activities.ChannelDetailsActivity"
+            android:label="@string/title_activity_channel_details"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

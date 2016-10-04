@@ -41,7 +41,7 @@ public class BaseActivity extends AppCompatActivity implements Navigation.Activi
         return new Intent(this, cls);
     }
 
-    private AppComponent getAppComponent() {
+    public AppComponent getAppComponent() {
         return RssFeedReaderApp.getInstance().getAppComponent();
     }
 

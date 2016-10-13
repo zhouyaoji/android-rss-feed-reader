@@ -5,8 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import rss.feed.reader.Navigation;
+import rss.feed.reader.R;
 import rss.feed.reader.RssFeedReaderApp;
 import rss.feed.reader.dagger.components.ActivityComponent;
 import rss.feed.reader.dagger.components.AppComponent;
@@ -39,6 +43,24 @@ public class BaseActivity extends AppCompatActivity implements Navigation.Activi
 
     private AppComponent getAppComponent() {
         return RssFeedReaderApp.getInstance().getAppComponent();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.settings:
+                Navigation.toSettingsActivity(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     public ActivityComponent getActivityComponent() {

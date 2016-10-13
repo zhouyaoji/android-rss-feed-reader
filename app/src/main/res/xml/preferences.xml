@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:key="refresh_category"
+        android:title="@string/preferences_automated_refresh">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="perform_refresh"
+            android:summary="@string/preferences_perform_refresh_summary"
+            android:title="@string/preferences_perform_refresh_title" />
+
+        <ListPreference
+            android:defaultValue="30"
+            android:dependency="perform_refresh"
+            android:entries="@array/refresh_interval"
+            android:entryValues="@array/refresh_interval_values"
+            android:key="refresh_interval"
+            android:summary="@string/preferences_refresh_interval_summary"
+            android:title="@string/preferences_refresh_interval_title" />
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="refresh_on_open"
+            android:summary="@string/preferences_refresh_on_open_summary"
+            android:title="@string/preferences_refresh_on_open_title"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="notifications"
+        android:title="@string/preferences_notifications">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="perform_notifications"
+            android:summary="@string/preferences_perform_notifications_summary"
+            android:title="@string/preferences_perform_notifications_title" />
+
+        <RingtonePreference
+            android:dependency="perform_notifications"
+            android:dialogMessage="@string/preferences_notifications_ringtone_dialog_message"
+            android:dialogTitle="@string/preferences_notification_ringtone_dialog_title"
+            android:key="notification_ringtone"
+            android:summary="@string/preferences_notification_ringtone_summary"
+            android:title="@string/preferences_notifications_ringtone_title" />
+
+        <CheckBoxPreference
+            android:dependency="perform_notifications"
+            android:defaultValue="false"
+            android:key="vibration"
+            android:summary="@string/preferences_notifications_vibration_summary"
+            android:title="@string/preferences_notifications_vibration_title" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="content"
+        android:title="@string/preferences_content">
+
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="unread_first"
+            android:summary="@string/preferences_content_unread_summary"
+            android:title="@string/preferences_content_unread_title" />
+
+        <ListPreference
+            android:defaultValue="7"
+            android:dependency="perform_refresh"
+            android:entries="@array/entry_availability"
+            android:entryValues="@array/entry_availability_value"
+            android:key="availability_period"
+            android:summary="@string/preferences_content_availability_period_summary"
+            android:title="@string/preferences_content_availability_period_title" />
+
+    </PreferenceCategory>
+</PreferenceScreen>

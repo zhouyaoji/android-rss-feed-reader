@@ -1,3 +1,73 @@
 <resources>
     <string name="app_name">Rss Feed Reader</string>
+    <string name="menu_settings">Settings</string>
+    <string name="settings_activity_label">Settings</string>
+    <string name="preferences_automated_refresh">Automated Refresh</string>
+    <string name="preferences_perform_refresh_summary">Enable or disable automatic refresh of all feeds</string>
+    <string name="preferences_perform_refresh_title">Enabled</string>
+    <string name="preferences_refresh_interval_summary">Interval between two automated refreshes</string>
+    <string name="preferences_refresh_interval_title">Refresh interval</string>
+    <string name="preferences_refresh_on_open_summary">Refreshes all feeds after opening the application</string>
+    <string name="preferences_refresh_on_open_title">Refresh Feeds on open</string>
+    <string name="preferences_notifications">Notifications</string>
+    <string name="preferences_perform_notifications_summary">Enable or disable notifications in case of new feed content</string>
+    <string name="preferences_perform_notifications_title">Enabled</string>
+    <string name="preferences_notifications_ringtone_dialog_message">Customise Notification Ringtone for you</string>
+    <string name="preferences_notification_ringtone_dialog_title">Notification Ringtone</string>
+    <string name="preferences_notification_ringtone_summary">Customise Notification Ringtone for you</string>
+    <string name="preferences_notifications_ringtone_title">Ringtone</string>
+    <string name="preferences_notifications_vibration_summary">Enable or disable vibration on new feed content</string>
+    <string name="preferences_notifications_vibration_title">Vibrate</string>
+    <string name="preferences_content">Content Presentations</string>
+    <string name="preferences_content_unread_summary">Show unread feeds entries above read entries</string>
+    <string name="preferences_content_unread_title">Unread first</string>
+    <string name="preferences_content_availability_period_summary">The entries that are older than the given date will be deleted</string>
+    <string name="preferences_content_availability_period_title">Time the entry will be kept</string>
+
+
+    <string-array name="refresh_interval">
+        <item>1 minute</item>
+        <item>5 minutes</item>
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>2 hours</item>
+        <item>6 hours</item>
+        <item>12 hours</item>
+        <item>1 day</item>
+    </string-array>
+
+    <!-- Values in minutes !-->
+    <string-array name="refresh_interval_values">
+        <item>1</item>
+        <item>5</item>
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>120</item>
+        <item>360</item>
+        <item>720</item>
+        <item>1440</item>
+    </string-array>
+
+    <string-array name="entry_availability">
+        <item>1 day</item>
+        <item>2 days</item>
+        <item>4 days</item>
+        <item>1 week</item>
+        <item>2 weeks</item>
+        <item>1 month</item>
+        <item>3 months</item>
+    </string-array>
+
+    <!-- Values in days !-->
+    <string-array name="entry_availability_value">
+        <item>1</item>
+        <item>2</item>
+        <item>4</item>
+        <item>7</item>
+        <item>14</item>
+        <item>30</item>
+        <item>90</item>
+    </string-array>
 </resources>

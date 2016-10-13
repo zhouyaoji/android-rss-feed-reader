@@ -23,6 +23,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ui.activities.SettingsActivity"
+            android:label="@string/settings_activity_label">
+        </activity>
+
         <!-- receivers -->
 
         <!-- services -->

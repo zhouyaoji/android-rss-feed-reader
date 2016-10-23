@@ -54,7 +54,8 @@ public class ImageUtils {
 
     /**
      * Load image from app resources to imageView
-     * @param resId - id of image resource
+     *
+     * @param resId     - id of image resource
      * @param imageView - view of image
      */
     public static void load(int resId, @NonNull ImageView imageView) {

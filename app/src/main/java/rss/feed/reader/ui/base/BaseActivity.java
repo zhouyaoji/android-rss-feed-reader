@@ -21,7 +21,7 @@ import rss.feed.reader.dagger.modules.ActivityModule;
  * Base activity class.
  * Created by vkravets on 8/31/2016.
  */
-public class BaseActivity extends AppCompatActivity implements Navigation.ActivityStarter {
+public abstract class BaseActivity extends AppCompatActivity implements Navigation.ActivityStarter {
 
     private ActivityComponent mActivityComponent;
 
@@ -34,6 +34,8 @@ public class BaseActivity extends AppCompatActivity implements Navigation.Activi
                 .appComponent(getAppComponent())
                 .activityModule(new ActivityModule(this))
                 .build();
+
+        injectActivity(mActivityComponent);
     }
 
     @Override
@@ -66,4 +68,6 @@ public class BaseActivity extends AppCompatActivity implements Navigation.Activi
     public ActivityComponent getActivityComponent() {
         return mActivityComponent;
     }
+
+    protected abstract void injectActivity(ActivityComponent activityComponent);
 }

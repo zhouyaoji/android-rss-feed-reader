@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textLayoutTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/fragment_channel_details_channel_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fragment_channel_details_label_title" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/textLayoutUrl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textLayoutTitle"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/fragment_channel_details_channel_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fragment_channel_details_label_url" />
+
+    </android.support.design.widget.TextInputLayout>
+
+    <Button
+        android:id="@+id/fragment_channel_details_btn_save"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="@string/btn_title_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textLayoutUrl"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/activity_channel_list_fab_margin"/>
+
+    <Button
+        android:id="@+id/fragment_channel_details_btn_delete"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:text="@string/btn_title_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fragment_channel_details_btn_save"
+        android:layout_alignBottom="@+id/fragment_channel_details_btn_save"
+        android:layout_toLeftOf="@+id/fragment_channel_details_btn_save"
+        android:layout_toStartOf="@+id/fragment_channel_details_btn_save" />
+
+</RelativeLayout>

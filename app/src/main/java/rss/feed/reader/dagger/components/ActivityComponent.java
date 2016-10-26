@@ -5,6 +5,8 @@ import android.app.Activity;
 import dagger.Component;
 import rss.feed.reader.dagger.modules.ActivityModule;
 import rss.feed.reader.dagger.scopes.ActivityScope;
+import rss.feed.reader.ui.fragments.ChannelDetailsFragment;
+import rss.feed.reader.ui.fragments.ChannelListFragment;
 
 /**
  * Created by Orest Guziy on 16.09.16.
@@ -15,4 +17,7 @@ public interface ActivityComponent {
 
     Activity activity();
 
+    void inject(ChannelDetailsFragment fragment);
+
+    void inject(ChannelListFragment fragment);
 }

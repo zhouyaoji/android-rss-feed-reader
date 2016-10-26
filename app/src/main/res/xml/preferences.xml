@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:key="channels_list_category"
+        android:title="@string/preferences_channels_list">
+        <Preference
+            android:key="channels_list"
+            android:summary="@string/preferences_channels_list_description"
+            android:title="@string/preferences_channels_list_title">
+
+        </Preference>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="refresh_category"
@@ -24,7 +34,7 @@
             android:defaultValue="true"
             android:key="refresh_on_open"
             android:summary="@string/preferences_refresh_on_open_summary"
-            android:title="@string/preferences_refresh_on_open_title"/>
+            android:title="@string/preferences_refresh_on_open_title" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -46,8 +56,8 @@
             android:title="@string/preferences_notifications_ringtone_title" />
 
         <CheckBoxPreference
-            android:dependency="perform_notifications"
             android:defaultValue="false"
+            android:dependency="perform_notifications"
             android:key="vibration"
             android:summary="@string/preferences_notifications_vibration_summary"
             android:title="@string/preferences_notifications_vibration_title" />

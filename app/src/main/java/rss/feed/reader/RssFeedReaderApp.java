@@ -1,6 +1,8 @@
 package rss.feed.reader;
 
 import android.app.Application;
+import android.content.Context;
+import android.content.SharedPreferences;
 
 import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
@@ -19,7 +21,7 @@ public class RssFeedReaderApp extends Application {
      * Application instance.
      */
     private static RssFeedReaderApp sInstance;
-    private AppComponent mAppComponent;
+    private static AppComponent mAppComponent;
 
     private Tracker mTracker;
 
@@ -47,7 +49,7 @@ public class RssFeedReaderApp extends Application {
         return mTracker;
     }
 
-    public AppComponent getAppComponent() {
+    public static AppComponent getAppComponent() {
         return mAppComponent;
     }
 }

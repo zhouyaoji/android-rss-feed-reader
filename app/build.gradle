@@ -22,12 +22,14 @@ android {
 
 ext {
     supportLibraryVersion = '24.2.0'
+    designLibraryVersion = '24.2.0'
     picassoVersion = '2.5.2'
     butterKnifeVersion = '8.4.0'
     retrofitVersion = '2.1.0'
     firebaseVersion = '9.4.0'
     playServicesVersion = '9.4.0'
     daggerVersion = '2.5'
+    circledImageVersion ='1.2.1'
 }
 
 dependencies {
@@ -53,6 +55,12 @@ dependencies {
     compile "com.google.firebase:firebase-auth:$firebaseVersion"
 
     compile "com.google.android.gms:play-services-analytics:$playServicesVersion"
+
+    compile "com.android.support:recyclerview-v7:$designLibraryVersion"
+    compile "com.android.support:design:$designLibraryVersion"
+
+    //circled imageView
+    compile "de.hdodenhof:circleimageview:$circledImageVersion"
 }
 
 // Should be defined below dependencies section in order to success compile

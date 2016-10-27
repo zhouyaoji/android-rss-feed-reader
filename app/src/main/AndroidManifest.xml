@@ -9,7 +9,7 @@
     <application
         android:name=".RssFeedReaderApp"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/rss_logo"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
@@ -28,11 +28,11 @@
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 
-             <category android:name="android.intent.category.LAUNCHER" />
-             </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-
-        <activity android:name=".ui.activities.SettingsActivity"
+        <activity
+            android:name=".ui.activities.SettingsActivity"
             android:label="@string/settings_activity_label">
         </activity>
         <activity
@@ -42,6 +42,18 @@
         <activity
             android:name=".ui.activities.ChannelDetailsActivity"
             android:label="@string/title_activity_channel_details"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ui.activities.SignUpActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ui.activities.SignInActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".ui.activities.ResetPasswordActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>

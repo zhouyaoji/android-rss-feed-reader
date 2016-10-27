@@ -1,7 +1,6 @@
 package rss.feed.reader.ui.activities;
 
 import android.os.Bundle;
-import android.view.Menu;
 
 import rss.feed.reader.R;
 import rss.feed.reader.dagger.components.ActivityComponent;
@@ -27,12 +26,6 @@ public class ChannelListActivity extends BaseActivity {
                     .add(R.id.activity_channel_list_container, ChannelListFragment.getInstance(), TAG_CHANNEL_LIST_FRAGMENT)
                     .commit();
         }
-    }
-
-    /** Remove base menu */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
     }
 
     @Override

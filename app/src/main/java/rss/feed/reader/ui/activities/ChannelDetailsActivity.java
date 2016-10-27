@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,14 +57,6 @@ public class ChannelDetailsActivity extends BaseActivity implements ChannelDetai
     @Override
     public void setActivityTitle(String title) {
         mCollapsingToolBar.setTitle(title);
-    }
-
-    /**
-     * Remove base menu
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
     }
 
     @Override

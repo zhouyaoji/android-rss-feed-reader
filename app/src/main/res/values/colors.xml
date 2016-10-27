@@ -7,4 +7,6 @@
     <color name="list_item_background_pressed">#aaaaaa</color>
     <color name="list_item_background">#ffffff</color>
 
+    <color name="progress_background">#30aaaaaa</color>
+
 </resources>

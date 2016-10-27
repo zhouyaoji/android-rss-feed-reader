@@ -9,8 +9,11 @@ import android.support.annotation.Nullable;
 import rss.feed.reader.api.model.Channel;
 import rss.feed.reader.ui.activities.ChannelDetailsActivity;
 import rss.feed.reader.ui.activities.ChannelListActivity;
-
+import rss.feed.reader.ui.activities.MainActivity;
+import rss.feed.reader.ui.activities.ResetPasswordActivity;
 import rss.feed.reader.ui.activities.SettingsActivity;
+import rss.feed.reader.ui.activities.SignInActivity;
+import rss.feed.reader.ui.activities.SignUpActivity;
 
 /**
  * App navigation.
@@ -52,11 +55,35 @@ public final class Navigation {
     }
 
     /**
-     * Interface that defines a protocol that allows to navigate to some other activity.
+     * Navigates to Settings Activity.
      */
-    public static void toSettingsActivity(Context context) {
-        Intent intent = new Intent(context, SettingsActivity.class);
-        context.startActivity(intent);
+    public static void toSettingsActivity(@NonNull ActivityStarter starter) {
+        starter.startActivity(starter.createIntent(SettingsActivity.class));
+    }
+
+    /**
+     * Navigates to SignInActivity Activity.
+     */
+    public static void toSignInActivity(@NonNull ActivityStarter starter) {
+        starter.startActivity(starter.createIntent(SignInActivity.class));
+    }
+
+    /**
+     * Navigates to SignUpActivity Activity.
+     */
+    public static void toSignUpActivity(@NonNull ActivityStarter starter) {
+        starter.startActivity(starter.createIntent(SignUpActivity.class));
+    }
+
+    /**
+     * Navigates to Main Activity
+     */
+    public static void toMainActivity(@NonNull ActivityStarter starter) {
+        starter.startActivity(starter.createIntent(MainActivity.class));
+    }
+
+    public static void toResetPasswordActivity(@NonNull ActivityStarter starter) {
+        starter.startActivity(starter.createIntent(ResetPasswordActivity.class));
     }
 
     /**

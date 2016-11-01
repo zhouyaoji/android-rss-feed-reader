@@ -2,16 +2,12 @@ package rss.feed.reader.ui.activities;
 
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.Menu;
 
 import rss.feed.reader.R;
 import rss.feed.reader.dagger.components.ActivityComponent;
 import rss.feed.reader.ui.base.BaseActivity;
 import rss.feed.reader.ui.fragments.SettingsFragment;
 
-/**
- * Created by omartynets on 29.09.2016.
- */
 public class SettingsActivity extends BaseActivity {
 
     @Override
@@ -24,11 +20,6 @@ public class SettingsActivity extends BaseActivity {
         getFragmentManager().beginTransaction()
                 .replace(R.id.content, new SettingsFragment())
                 .commit();
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return false;
     }
 
     @Override

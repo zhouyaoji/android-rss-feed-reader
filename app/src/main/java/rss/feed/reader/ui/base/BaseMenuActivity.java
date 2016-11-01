@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,10 +17,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
 import butterknife.BindView;
+import rss.feed.reader.Navigation;
 import rss.feed.reader.R;
 
 /**
@@ -42,6 +48,9 @@ import rss.feed.reader.R;
 
 public abstract class BaseMenuActivity extends BaseActivity {
 
+    @Inject
+    public FirebaseAuth mAuth;
+
     @BindView(R.id.drawer_layout)
     DrawerLayout mMenuLayout;
 
@@ -61,6 +70,8 @@ public abstract class BaseMenuActivity extends BaseActivity {
         if (mMenuView == null) {
             throw new IllegalStateException("Activity must have view with left_side_menu id");
         }
+
+        getActivityComponent().inject(this);
 
         initActionBarToggle();
         initNavigationDrawer();
@@ -118,6 +129,21 @@ public abstract class BaseMenuActivity extends BaseActivity {
             mMenuLayout.closeDrawer(mMenuView, true);
             return true;
         }
+        if (item.getItemId() == R.id.menu_settings_item) {
+            mMenuLayout.closeDrawer(GravityCompat.START);
+            Navigation.toSettingsActivity(this);
+            return true;
+        }
+        if (item.getItemId() == R.id.menu_signin_item) {
+            mMenuLayout.closeDrawer(GravityCompat.START);
+            Navigation.toSignInActivity(this);
+            return true;
+        }
+        if (item.getItemId() == R.id.menu_signout_item) {
+            mAuth.signOut();
+            mMenuLayout.closeDrawer(GravityCompat.START);
+            return true;
+        }
         return false;
     }
 
@@ -135,6 +161,14 @@ public abstract class BaseMenuActivity extends BaseActivity {
         for (int i = 0; i < size; i++) {
             menu.add(R.id.menu_news_list_item, i, Menu.NONE, elements.get(i));
         }
+
+        if (mAuth.getCurrentUser() != null) {
+            menu.findItem(R.id.menu_signin_item).setVisible(false);
+            menu.findItem(R.id.menu_signout_item).setVisible(true);
+        } else {
+            menu.findItem(R.id.menu_signin_item).setVisible(true);
+            menu.findItem(R.id.menu_signout_item).setVisible(false);
+        }
     }
 
     @Override
@@ -147,11 +181,6 @@ public abstract class BaseMenuActivity extends BaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if (mMenuToggle != null && mMenuToggle.onOptionsItemSelected(item)) {
-            return true;
-
-        } else {
-            return super.onOptionsItemSelected(item);
-        }
+        return mMenuToggle != null && mMenuToggle.onOptionsItemSelected(item) || super.onOptionsItemSelected(item);
     }
 }

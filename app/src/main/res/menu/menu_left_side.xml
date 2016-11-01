@@ -25,4 +25,17 @@
             android:id="@+id/menu_feedback_item"
             android:title="@string/menu_feedback_item" />
     </group>
+
+    <group
+        android:checkableBehavior="single"
+        android:menuCategory="secondary"
+        android:id="@+id/menu_group_signing">
+        <item
+            android:id="@+id/menu_signin_item"
+            android:title="@string/sign_in_activity_title" />
+
+        <item
+            android:id="@+id/menu_signout_item"
+            android:title="@string/menu_sign_out" />
+    </group>
 </menu>

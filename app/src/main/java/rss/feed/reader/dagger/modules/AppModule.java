@@ -2,11 +2,10 @@ package rss.feed.reader.dagger.modules;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.support.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 
-import javax.inject.Inject;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -39,6 +38,12 @@ public class AppModule {
     @Provides
     public SharedPreferences providesPreferences(){
         return mApp.getSharedPreferences("RssFeedReaderApp", Context.MODE_PRIVATE);
+    }
+
+    @Provides
+    @Singleton
+    public FirebaseAuth providesFirebaseAuthInstance() {
+        return FirebaseAuth.getInstance();
     }
 
     @Singleton

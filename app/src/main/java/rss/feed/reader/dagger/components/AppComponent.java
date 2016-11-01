@@ -1,5 +1,7 @@
 package rss.feed.reader.dagger.components;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 import javax.inject.Singleton;
 
 import dagger.Component;
@@ -19,4 +21,6 @@ public interface AppComponent {
     RssFeedReaderApp app();
 
     ChannelManager getChannelManager();
+
+    FirebaseAuth getAuthInstance();
 }

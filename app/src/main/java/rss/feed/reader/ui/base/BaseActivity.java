@@ -1,13 +1,12 @@
 package rss.feed.reader.ui.base;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 
 import rss.feed.reader.Navigation;
 import rss.feed.reader.R;
@@ -25,6 +24,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
     private ActivityComponent mActivityComponent;
 
+    private ProgressDialog mProgressDialog;
+
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,8 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
                 .build();
 
         injectActivity(mActivityComponent);
+
+        mProgressDialog = new ProgressDialog(this, R.style.AppCompatAlertDialogStyle);
     }
 
     @Override
@@ -49,20 +52,17 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu_main, menu);
-        return true;
+        return false;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.settings:
-                Navigation.toSettingsActivity(this);
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+    protected void hideProgress() {
+        mProgressDialog.dismiss();
+    }
+
+    protected void showProgress(String message) {
+        mProgressDialog.setMessage(message);
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.show();
     }
 
     public ActivityComponent getActivityComponent() {

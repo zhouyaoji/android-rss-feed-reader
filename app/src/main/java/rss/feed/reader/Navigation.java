@@ -18,13 +18,17 @@ import rss.feed.reader.ui.activities.SettingsActivity;
  */
 public final class Navigation {
 
-    /** Navigates to Help page. */
+    /**
+     * Navigates to Help page.
+     */
     public static void toHelp(@NonNull ActivityStarter activityStarter) {
         // TODO:
     }
 
-    /** Navigates to web page that specified in {@code url} param. It will be opened
-     * in a default system browser. */
+    /**
+     * Navigates to web page that specified in {@code url} param. It will be opened
+     * in a default system browser.
+     */
     public static void toWebBrowser(@NonNull ActivityStarter starter, @NonNull String url) {
         final Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         starter.startActivity(intent);
@@ -55,7 +59,9 @@ public final class Navigation {
         context.startActivity(intent);
     }
 
-    /** Interface that defines a protocol that allows to navigate to some other activity. */
+    /**
+     * Interface that defines a protocol that allows to navigate to some other activity.
+     */
     public interface ActivityStarter {
 
         void startActivity(Intent intent);

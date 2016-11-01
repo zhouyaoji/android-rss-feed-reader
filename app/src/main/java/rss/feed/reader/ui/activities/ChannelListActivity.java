@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.Menu;
 
 import rss.feed.reader.R;
+import rss.feed.reader.dagger.components.ActivityComponent;
 import rss.feed.reader.ui.base.BaseActivity;
 import rss.feed.reader.ui.fragments.ChannelListFragment;
 
@@ -32,5 +33,10 @@ public class ChannelListActivity extends BaseActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return false;
+    }
+
+    @Override
+    protected void injectActivity(ActivityComponent activityComponent) {
+        activityComponent.inject(this);
     }
 }

@@ -10,6 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import rss.feed.reader.R;
 import rss.feed.reader.api.model.Channel;
+import rss.feed.reader.dagger.components.ActivityComponent;
 import rss.feed.reader.ui.base.BaseActivity;
 import rss.feed.reader.ui.fragments.ChannelDetailsFragment;
 
@@ -59,9 +60,16 @@ public class ChannelDetailsActivity extends BaseActivity implements ChannelDetai
         mCollapsingToolBar.setTitle(title);
     }
 
-    /** Remove base menu */
+    /**
+     * Remove base menu
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         return false;
+    }
+
+    @Override
+    protected void injectActivity(ActivityComponent activityComponent) {
+        activityComponent.inject(this);
     }
 }

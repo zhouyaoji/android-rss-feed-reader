@@ -23,7 +23,8 @@
         <!-- content providers -->
 
         <!-- activities -->
-        <activity android:name=".ui.activities.MainActivity">
+        <activity android:name=".ui.activities.MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
              <intent-filter>
              <action android:name="android.intent.action.MAIN" />
 
@@ -41,7 +42,8 @@
         <activity
             android:name=".ui.activities.ChannelDetailsActivity"
             android:label="@string/title_activity_channel_details"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
     </application>
 
 </manifest>

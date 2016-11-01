@@ -97,4 +97,17 @@
         <item>30</item>
         <item>90</item>
     </string-array>
+
+    <!-- Left Side Menu -->
+    <string name="menu_all_news_item">All News</string>
+    <string name="menu_news_list_item">List of News</string>
+    <string name="menu_settings_item">Settings</string>
+    <string name="menu_help_item">Help</string>
+    <string name="menu_feedback_item">Feedback</string>
+    <string name="menu_default_username">John Doe</string>
+
+    <!-- Accessibility resources -->
+    <string name="menu_toggle_open">Open toggle</string>
+    <string name="menu_toggle_close">Close toggle</string>
+    <string name="menu_icon_description">Profile image</string>
 </resources>

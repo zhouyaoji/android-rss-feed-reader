@@ -49,7 +49,7 @@ public class ChannelDetailsFragment extends BaseFragment {
     public ChannelManager mChannelsManager;
 
     /**
-     * Interface for making callback from channel dialog
+     * Interface for making callbackSuccess from channel dialog
      */
     public interface ChannelDetailsInterface {
         void setActivityTitle(String title);
@@ -123,6 +123,7 @@ public class ChannelDetailsFragment extends BaseFragment {
     }
 
     public void setResultsAndFinish() {
+
         Intent intent = new Intent();
         getActivity().setResult(RESULT_OK, intent);
         getActivity().finish();

@@ -5,12 +5,18 @@ import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.widget.Toolbar;
 
+import javax.inject.Inject;
+
 import butterknife.ButterKnife;
 import rss.feed.reader.R;
 import rss.feed.reader.dagger.components.ActivityComponent;
+import rss.feed.reader.managers.ChannelManager;
 import rss.feed.reader.ui.base.BaseMenuActivity;
 
 public class MainActivity extends BaseMenuActivity {
+
+    @Inject
+    ChannelManager mChannelManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +26,25 @@ public class MainActivity extends BaseMenuActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.base_toolbar);
         setSupportActionBar(toolbar);
+
+
+
+
+        if (mChannelManager.isUserAuthorized()) {
+            showProgress(getString(R.string.progress_message_loading));
+            mChannelManager.syncChannels();
+            mChannelManager.setCallback(new ChannelManager.ChannelsCallback() {
+                @Override
+                public void callbackSuccess() {
+                    hideProgress();
+                }
+
+                @Override
+                public void callbackFailure() {
+                    hideProgress();
+                }
+            });
+        }
     }
 
     @Override
@@ -37,4 +62,5 @@ public class MainActivity extends BaseMenuActivity {
             super.onBackPressed();
         }
     }
+
 }

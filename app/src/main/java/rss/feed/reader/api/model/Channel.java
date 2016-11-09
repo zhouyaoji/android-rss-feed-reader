@@ -3,13 +3,19 @@ package rss.feed.reader.api.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.firebase.database.IgnoreExtraProperties;
+
 /**
  * Created by Andriy Ksenych on 03.10.2016.
  */
-
+@IgnoreExtraProperties
 public class Channel implements Parcelable {
     private String title;
     private String url;
+
+    public Channel() {
+
+    }
 
     public Channel(String title, String url) {
         this.title = title;

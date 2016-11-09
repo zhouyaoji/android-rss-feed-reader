@@ -73,7 +73,7 @@ public class SignInActivity extends BaseSignActivity {
 
 
     private void signIn(String email, String password) {
-        showProgress(getString(R.string.progress_mesage_authenticating));
+        showProgress(getString(R.string.progress_message_authenticating));
         mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {

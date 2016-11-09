@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.FirebaseDatabase;
 import com.google.gson.Gson;
 
 import javax.inject.Singleton;
@@ -46,6 +47,12 @@ public class AppModule {
         return FirebaseAuth.getInstance();
     }
 
+    @Provides
+    @Singleton
+    public FirebaseDatabase providesFirebaseDatabaseInstance(){
+        return FirebaseDatabase.getInstance();
+    }
+
     @Singleton
     @Provides
     public Gson providesGson(){
@@ -54,7 +61,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    public ChannelManager providesChannelManager(Gson gson, SharedPreferences preferences){
-        return new ChannelManager(gson, preferences);
+    public ChannelManager providesChannelManager(Gson gson, SharedPreferences preferences, FirebaseDatabase firebaseDatabase){
+        return new ChannelManager(gson, preferences, firebaseDatabase);
     }
 }

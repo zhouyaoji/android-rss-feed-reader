@@ -58,7 +58,7 @@ public class ResetPasswordActivity extends BaseSignActivity {
             return;
         }
 
-        showProgress(getString(R.string.progress_mesage_authenticating));
+        showProgress(getString(R.string.progress_message_authenticating));
         mAuth.sendPasswordResetEmail(mEmail)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

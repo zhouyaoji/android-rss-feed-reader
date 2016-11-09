@@ -1,7 +1,9 @@
 {
   "project_info": {
     "project_number": "483662641418",
-    "project_id": "firebase-rss-feed-reader"
+    "firebase_url": "https://fir-rss-feed-reader.firebaseio.com",
+    "project_id": "firebase-rss-feed-reader",
+    "storage_bucket": "firebase-rss-feed-reader.appspot.com"
   },
   "client": [
     {
@@ -11,7 +13,20 @@
           "package_name": "rss.feed.reader"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "483662641418-q404skkj9vt3b15a5uiumsb2kmcf1qbm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "rss.feed.reader",
+            "certificate_hash": "7F33997F0E757E883745C4A81DE283A5E251F3BF"
+          }
+        },
+        {
+          "client_id": "483662641418-vt0b2b3aju5878pdrj9t9j3pgle9qlsl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyBlMa19j4iD1lG-FX9qe_5DOqQy5mq9dAw"
@@ -25,11 +40,16 @@
           }
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "483662641418-vt0b2b3aju5878pdrj9t9j3pgle9qlsl.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
-          "status": 1
+          "status": 2
         }
       }
     }

@@ -22,7 +22,7 @@ public class ImageUtils {
     private static final Picasso PICASSO = Picasso.with(RssFeedReaderApp.getInstance());
 
     /**
-     * Load image from internet to imageView without loading callback
+     * Load image from internet to imageView without loading callbackSuccess
      *
      * @param path      - image url
      * @param imageView - view of image
@@ -32,11 +32,11 @@ public class ImageUtils {
     }
 
     /**
-     * Load image from internet to imageView with loading callback
+     * Load image from internet to imageView with loading callbackSuccess
      *
      * @param path      - image url
      * @param imageView - view of image
-     * @param callback  - {@link ImageCallback} callback with onSuccess and onError methods loading image url
+     * @param callback  - {@link ImageCallback} callbackSuccess with onSuccess and onError methods loading image url
      */
     public static void load(@NonNull final String path, @NonNull final ImageView imageView, @NonNull final ImageCallback callback) {
         PICASSO.load(path).into(imageView, new Callback() {

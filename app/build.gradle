@@ -26,8 +26,8 @@ ext {
     picassoVersion = '2.5.2'
     butterKnifeVersion = '8.4.0'
     retrofitVersion = '2.1.0'
-    firebaseVersion = '9.4.0'
-    playServicesVersion = '9.4.0'
+    firebaseVersion = '9.8.0'
+    playServicesVersion = '9.8.0'
     daggerVersion = '2.5'
     circledImageVersion ='1.2.1'
 }
@@ -54,6 +54,7 @@ dependencies {
     //firebase
     compile "com.google.firebase:firebase-core:$firebaseVersion"
     compile "com.google.firebase:firebase-auth:$firebaseVersion"
+    compile "com.google.firebase:firebase-database:$firebaseVersion"
 
     compile "com.google.android.gms:play-services-analytics:$playServicesVersion"
 

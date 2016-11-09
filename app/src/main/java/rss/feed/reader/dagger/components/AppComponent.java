@@ -23,4 +23,5 @@ public interface AppComponent {
     ChannelManager getChannelManager();
 
     FirebaseAuth getAuthInstance();
+
 }

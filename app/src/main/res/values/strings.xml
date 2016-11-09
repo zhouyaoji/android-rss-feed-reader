@@ -72,7 +72,8 @@
     <string name="btn_back">Back</string>
     <string name="email_sent_message">We have sent you instructions to reset your password</string>
     <string name="snackbar_control_OK">OK</string>
-    <string name="progress_mesage_authenticating">Authenticating...</string>
+    <string name="progress_message_authenticating">Authenticating...</string>
+    <string name="progress_message_loading">Loading...</string>
 
     <string-array name="refresh_interval">
         <item>1 minute</item>

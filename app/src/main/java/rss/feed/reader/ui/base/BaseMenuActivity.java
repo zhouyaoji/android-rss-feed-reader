@@ -27,6 +27,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import rss.feed.reader.Navigation;
 import rss.feed.reader.R;
+import rss.feed.reader.managers.ChannelManager;
 
 /**
  * Base activity that should be used as parent if host activity has left-side menu.
@@ -50,6 +51,9 @@ public abstract class BaseMenuActivity extends BaseActivity {
 
     @Inject
     public FirebaseAuth mAuth;
+
+    @Inject
+    public ChannelManager mChannelManager;
 
     @BindView(R.id.drawer_layout)
     DrawerLayout mMenuLayout;
@@ -136,11 +140,13 @@ public abstract class BaseMenuActivity extends BaseActivity {
         }
         if (item.getItemId() == R.id.menu_signin_item) {
             mMenuLayout.closeDrawer(GravityCompat.START);
+            this.finish();
             Navigation.toSignInActivity(this);
             return true;
         }
         if (item.getItemId() == R.id.menu_signout_item) {
             mAuth.signOut();
+            mChannelManager.clearAllChannels();
             mMenuLayout.closeDrawer(GravityCompat.START);
             return true;
         }

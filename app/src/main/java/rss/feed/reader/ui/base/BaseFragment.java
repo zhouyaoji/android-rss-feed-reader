@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 
 import rss.feed.reader.Constants;
 import rss.feed.reader.Navigation;
@@ -17,9 +18,8 @@ import rss.feed.reader.dagger.components.ActivityComponent;
 public abstract class BaseFragment extends Fragment implements Navigation.ActivityStarter, Constants {
 
     @Override
-    public void onCreate(@Nullable final Bundle savedInstanceState) {
+    public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         // extra code here..
         BaseActivity activity = (BaseActivity) getActivity();
         injectFragment(activity.getActivityComponent());

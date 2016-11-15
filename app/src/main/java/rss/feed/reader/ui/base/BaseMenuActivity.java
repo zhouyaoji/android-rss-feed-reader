@@ -14,12 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import butterknife.BindView;
+import rss.feed.reader.Navigation;
 import rss.feed.reader.R;
 
 /**
@@ -114,28 +111,36 @@ public abstract class BaseMenuActivity extends BaseActivity {
 
     private boolean handleNavigation(@NonNull MenuItem item) {
         if (item.getGroupId() == R.id.menu_news_list_item) {
-            Toast.makeText(BaseMenuActivity.this, "Selected:" + item.getItemId(), Toast.LENGTH_SHORT).show();
+            mMenuView.setCheckedItem(item.getItemId());
+            onNewsItemSelected(item);
             mMenuLayout.closeDrawer(mMenuView, true);
             return true;
         }
-        return false;
-    }
 
-    // TODO: add updating menu instead of fully clearing it
-    private void setUpNavigationViewContent() {
-        List<String> elements = new ArrayList<>();
-        elements.add("RSS One");
-        elements.add("RSS Two");
-        elements.add("RSS Three");
-
-        Menu menu = mMenuView.getMenu();
-        menu.removeGroup(R.id.menu_news_list_item);
-
-        int size = elements.size();
-        for (int i = 0; i < size; i++) {
-            menu.add(R.id.menu_news_list_item, i, Menu.NONE, elements.get(i));
+        mMenuLayout.closeDrawer(mMenuView, true);
+        int id = item.getItemId();
+        switch (id) {
+            case R.id.menu_all_news_item:
+                loadAllNews();
+                return true;
+            case R.id.menu_settings_item:
+                Navigation.toSettingsActivity(this);
+                return true;
+            case R.id.menu_help_item:
+                return true;
+            case R.id.menu_feedback_item:
+                return true;
+            default:
+                return false;
         }
     }
+
+    public abstract void onNewsItemSelected(@NonNull MenuItem item);
+
+    public abstract void loadAllNews();
+
+    // TODO: add updating menu instead of fully clearing it
+    public abstract void setUpNavigationViewContent();
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
@@ -149,9 +154,12 @@ public abstract class BaseMenuActivity extends BaseActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mMenuToggle != null && mMenuToggle.onOptionsItemSelected(item)) {
             return true;
-
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    protected Menu getMenu() {
+        return mMenuView.getMenu();
     }
 }

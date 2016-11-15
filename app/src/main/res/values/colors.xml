@@ -5,6 +5,8 @@
     <color name="colorAccent">#ffc100</color>
 
     <color name="list_item_background_pressed">#aaaaaa</color>
-    <color name="list_item_background">#ffffff</color>
-
+    <color name="list_item_background">#dddddd</color>
+    <color name="list_item_border">#B1BCBE</color>
+    <color name="item_news_list_url_background">#aaffc100</color>
+    <color name="progress_background">#55000000</color>
 </resources>

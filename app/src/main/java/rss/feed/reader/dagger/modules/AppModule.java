@@ -12,7 +12,10 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import rss.feed.reader.RssFeedReaderApp;
+import rss.feed.reader.api.retrofit.ApiProvider;
+import rss.feed.reader.api.retrofit.RetrofitApiProvider;
 import rss.feed.reader.managers.ChannelManager;
+import rss.feed.reader.managers.NewsManager;
 
 /**
  * Created by Orest Guziy on 16.09.16.
@@ -51,5 +54,16 @@ public class AppModule {
     @Singleton
     public ChannelManager providesChannelManager(Gson gson, SharedPreferences preferences){
         return new ChannelManager(gson, preferences);
+    }
+
+    @Singleton
+    @Provides
+    public ApiProvider providesApiProvider(){
+        return new RetrofitApiProvider();
+    }
+
+    @Provides
+    public NewsManager providesNewsManager(ApiProvider apiProvider, ChannelManager channelManager, Context context){
+        return new NewsManager(apiProvider, channelManager, context);
     }
 }

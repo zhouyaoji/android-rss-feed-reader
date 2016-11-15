@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/item_news_list_url_background"/>
+    <corners android:bottomLeftRadius="@dimen/item_news_list_corners_radius"
+        android:bottomRightRadius="@dimen/item_news_list_corners_radius"/>
+</shape>

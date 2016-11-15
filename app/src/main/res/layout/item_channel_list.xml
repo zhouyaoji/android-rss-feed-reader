@@ -5,7 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/selector_list_item"
-    android:orientation="horizontal">
+    android:orientation="horizontal"
+    android:layout_marginTop="4dp"
+    android:layout_marginLeft="4dp"
+    android:layout_marginRight="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -51,7 +54,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="http://google.com.ua/rss/blablabla"
-            android:textSize="@dimen/item_channel_list_text_size"/>
+            android:textSize="@dimen/item_channel_list_text_size"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:minLines = "1"
+            android:maxLines = "1"/>
 
     </LinearLayout>
 
@@ -71,7 +78,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/item_channel_list_separator_height"
-        android:background="@color/colorPrimaryDark" />
+        android:layout_height="@dimen/item_channel_list_separator_height" />
 
 </RelativeLayout>

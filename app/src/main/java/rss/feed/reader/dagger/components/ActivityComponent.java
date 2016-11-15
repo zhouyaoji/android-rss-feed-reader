@@ -11,6 +11,7 @@ import rss.feed.reader.ui.activities.MainActivity;
 import rss.feed.reader.ui.activities.SettingsActivity;
 import rss.feed.reader.ui.fragments.ChannelDetailsFragment;
 import rss.feed.reader.ui.fragments.ChannelListFragment;
+import rss.feed.reader.ui.fragments.NewsListFragment;
 
 /**
  * Created by Orest Guziy on 16.09.16.
@@ -32,4 +33,6 @@ public interface ActivityComponent {
     void inject(MainActivity activity);
 
     void inject(SettingsActivity activity);
+
+    void inject(NewsListFragment fragment);
 }

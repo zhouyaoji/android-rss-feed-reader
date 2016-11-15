@@ -29,6 +29,21 @@
     <string name="preferences_channels_list_title">Manage channels list</string>
     <string name="preferences_channels_list_description">Add, edit or remove channels</string>
 
+    <string name="preferences_startup_news">Startup news</string>
+    <string name="preferences_startup_news_title">Select news</string>
+    <string name="preferences_startup_news_summary">Select what news should be shown when the app is started at the first time</string>
+    <string name="preferences_startup_news_default">First rss</string>
+    <string-array name="preferences_startup_news_entry">
+        <item>First RSS feed</item>
+        <item>All news</item>
+    </string-array>
+
+    <!-- Values in days !-->
+    <string-array name="preferences_startup_news_value">
+        <item>First rss</item>
+        <item>All news</item>
+    </string-array>
+
     <string name="preferences_automated_refresh">Automated Refresh</string>
     <string name="preferences_perform_refresh_summary">Enable or disable automatic refresh of all feeds</string>
     <string name="preferences_perform_refresh_title">Enabled</string>
@@ -110,4 +125,9 @@
     <string name="menu_toggle_open">Open toggle</string>
     <string name="menu_toggle_close">Close toggle</string>
     <string name="menu_icon_description">Profile image</string>
+
+    <string name="error_news_url_incorrect">News url is incorrect</string>
+    <string name="error_no_internet_connection">No internet connection</string>
+    <string name="error_general_error">Ups...</string>
+
 </resources>

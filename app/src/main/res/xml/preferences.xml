@@ -12,6 +12,20 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="startup_news_category"
+        android:title="@string/preferences_startup_news">
+
+        <ListPreference
+            android:defaultValue="@string/preferences_startup_news_default"
+            android:entries="@array/preferences_startup_news_entry"
+            android:entryValues="@array/preferences_startup_news_value"
+            android:key="startup_news_selector"
+            android:summary="@string/preferences_startup_news_summary"
+            android:title="@string/preferences_startup_news_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="refresh_category"
         android:title="@string/preferences_automated_refresh">
 

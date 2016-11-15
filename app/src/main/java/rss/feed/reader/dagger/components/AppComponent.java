@@ -6,6 +6,7 @@ import dagger.Component;
 import rss.feed.reader.RssFeedReaderApp;
 import rss.feed.reader.dagger.modules.AppModule;
 import rss.feed.reader.managers.ChannelManager;
+import rss.feed.reader.managers.NewsManager;
 
 /**
  * Singleton-based app component
@@ -17,6 +18,6 @@ import rss.feed.reader.managers.ChannelManager;
 public interface AppComponent {
 
     RssFeedReaderApp app();
-
     ChannelManager getChannelManager();
+    NewsManager getNewsManager();
 }

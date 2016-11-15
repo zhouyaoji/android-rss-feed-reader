@@ -9,8 +9,8 @@ import android.support.annotation.Nullable;
 import rss.feed.reader.api.model.Channel;
 import rss.feed.reader.ui.activities.ChannelDetailsActivity;
 import rss.feed.reader.ui.activities.ChannelListActivity;
-
 import rss.feed.reader.ui.activities.SettingsActivity;
+import rss.feed.reader.ui.activities.WebActivity;
 
 /**
  * App navigation.
@@ -60,6 +60,18 @@ public final class Navigation {
     }
 
     /**
+     * Navigates to webView activity where browser with news is displayed
+     *
+     * @param context - activity
+     * @param newsUrl - url of news
+     */
+    public static void toWebActivity(Context context, String newsUrl) {
+        Intent intent = new Intent(context, WebActivity.class);
+        intent.putExtra(WebActivity.EXTRAS_NEWS_URL, newsUrl);
+        context.startActivity(intent);
+    }
+
+    /**
      * Interface that defines a protocol that allows to navigate to some other activity.
      */
     public interface ActivityStarter {
@@ -69,6 +81,5 @@ public final class Navigation {
         void startActivityForResult(Intent intent, int requestCode);
 
         Intent createIntent(@NonNull Class<?> cls);
-
     }
 }

@@ -9,7 +9,7 @@
 
     <!-- activity channels list-->
     <dimen name="item_channel_list_padding">8dp</dimen>
-    <dimen name="item_channel_list_separator_height">2dp</dimen>
+    <dimen name="item_channel_list_separator_height">5dp</dimen>
     <dimen name="item_channel_list_logo_size">50dp</dimen>
     <dimen name="item_channel_list_logo_margin">10dp</dimen>
     <dimen name="item_channel_list_text_size">14sp</dimen>
@@ -30,4 +30,20 @@
 
     <!-- Text Size -->
     <dimen name="text_size_normal">14sp</dimen>
+
+    <!-- main activity -->
+    <dimen name="item_news_list_padding">4dp</dimen>
+    <dimen name="item_news_list_logo_size">60dp</dimen>
+    <dimen name="item_news_list_logo_padding">4dp</dimen>
+    <dimen name="item_news_list_text_padding">4dp</dimen>
+    <dimen name="item_news_list_text_date_size">14sp</dimen>
+    <dimen name="item_news_list_text_title_size">16sp</dimen>
+    <dimen name="item_news_list_text_description_size">14sp</dimen>
+    <dimen name="item_news_list_text_url_size">14sp</dimen>
+    <dimen name="item_news_list_corners_radius">5dp</dimen>
+    <dimen name="item_news_list_border_width">1dp</dimen>
+
+    <!--progress view -->
+    <dimen name="progress_size">40dp</dimen>
+
 </resources>

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -27,16 +28,17 @@ public abstract class BaseActivity extends AppCompatActivity implements Navigati
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-
         // extra code here..
         mActivityComponent = DaggerActivityComponent.builder()
                 .appComponent(getAppComponent())
                 .activityModule(new ActivityModule(this))
                 .build();
 
+        super.onCreate(savedInstanceState);
+
         injectActivity(mActivityComponent);
     }
+
 
     @Override
     public Intent createIntent(@NonNull final Class<?> cls) {

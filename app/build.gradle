@@ -15,9 +15,13 @@ android {
 
     signingConfigs {
         release {
+            def Properties localProps = new Properties()
+            localProps.load(file("../local.properties").newReader())
+            def keystorePropsPath = localProps["keystore.path"]
+
             def Properties keystoreProps = new Properties()
-            keystoreProps.load(file("../../../keystore/keystore.properties").newReader())
-            storeFile file("../../../keystore/keystore.jks")
+            keystoreProps.load(file(keystorePropsPath + "keystore.properties").newReader())
+            storeFile file(keystorePropsPath + "keystore.jks")
             storePassword keystoreProps["keystore.pass"]
             keyAlias keystoreProps["keystore.alias"]
             keyPassword keystoreProps["keystore.alias.pass"]

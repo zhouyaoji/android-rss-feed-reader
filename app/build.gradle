@@ -13,9 +13,23 @@ android {
         versionName "1.0"
     }
 
+    signingConfigs {
+        release {
+            def Properties keystoreProps = new Properties()
+            keystoreProps.load(file("../../../keystore/keystore.properties").newReader())
+            storeFile file("../../../keystore/keystore.jks")
+            storePassword keystoreProps["keystore.pass"]
+            keyAlias keystoreProps["keystore.alias"]
+            keyPassword keystoreProps["keystore.alias.pass"]
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
+
+            signingConfig signingConfigs.release
+
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
